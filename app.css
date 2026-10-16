@@ -1,0 +1,87 @@
+.stl-preview {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 360px;
+  width: 100%;
+  color: var(--foreground);
+  background: var(--background);
+  font: inherit;
+}
+.stl-preview .stl-toolbar {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
+  padding: 8px;
+  border-bottom: 1px solid var(--border);
+  font-size: 12px;
+}
+.stl-preview .stl-filename {
+  flex: 1 1 120px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-weight: 500;
+}
+.stl-preview button {
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--background);
+  padding: 6px 9px;
+  color: inherit;
+  font: inherit;
+  min-height: 32px;
+  cursor: pointer;
+}
+.stl-preview button:hover:not(:disabled),
+.stl-preview button[aria-pressed="true"] {
+  background: var(--muted);
+}
+.stl-preview button:disabled {
+  opacity: 0.45;
+  cursor: default;
+}
+.stl-preview button:focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 2px;
+}
+.stl-preview .stl-stage {
+  position: relative;
+  flex: 1;
+  min-height: 240px;
+  overflow: hidden;
+  background: var(--muted);
+}
+.stl-preview .stl-canvas {
+  position: absolute;
+  inset: 0;
+}
+.stl-preview canvas {
+  display: block;
+  touch-action: none;
+}
+.stl-preview .stl-message {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-content: center;
+  padding: 24px;
+  background: var(--background);
+  text-align: center;
+  font-size: 13px;
+}
+.stl-preview .stl-footer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 16px;
+  padding: 8px 12px;
+  font-size: 11px;
+  color: var(--muted-foreground);
+  border-top: 1px solid var(--border);
+}
+@media (pointer: coarse) {
+  .stl-preview button {
+    min-height: 44px;
+  }
+}
